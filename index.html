@@ -1,1 +1,54 @@
-!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quick Tip Calculator</title>
+</head>
+<body>
+    <main>
+        <h1>Gorjeta Express</h1>
+
+        <section>
+            <div class="conta">
+                <label for="suaConta">Conta</label>
+                <input type="number" placeholder="Sua conta" id="suaConta">
+            </div>
+            <div>
+                <div class="ladosOpostos">
+                    <label for="entradaGorjeta">Selecione a gorjeta</label>
+                    <span id="porcentoGorjeta">0%</span>
+                </div>
+                <input type="range" value="0" id="entradaGorjeta" class="range">
+            </div>
+            <div class="ladosOpostos">
+                <span>Gorjeta</span>
+                <span id="valorGorjeta"></span>
+            </div>
+            <hr>
+            <div class="ladosOpostos total">
+                <span>Total</span>
+                <span id="totalComGorjeta"></span>
+            </div>
+        </section>
+
+        <section>
+            <div class="ladosOpostos">
+                <label for="entradaNumPagantes">No. de pagantes</label>
+                <span id="numPagantes">1 pessoa</span>
+            </div>
+            <input type="range" min="1" max="10" value="1" id="entradaNumPagantes" class="range">
+            <div class="ladosOpostos">
+                <span>Conta por pagante</span>
+                <span id="contaPorPagante"></span>
+            </div>
+            <div class="ladosOpostos">
+                <span>Gorjeta por pagante</span>
+                <span id="gorjetaPorPagante"></span>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
