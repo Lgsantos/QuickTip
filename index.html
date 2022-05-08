@@ -8,7 +8,7 @@
     <title>Quick Tip Calculator</title>
 </head>
 <body>
-    <main>
+    <main id="container">
         <h1>Gorjeta Express</h1>
 
         <section>
@@ -50,5 +50,27 @@
             </div>
         </section>
     </main>
+    <script>
+        function atualiza() {
+            let conta = Number(document.getElementById('suaConta').value)
+            let porcentoGorjeta = document.getElementById('entradaGorjeta').value
+            let numPagantes = document.getElementById('entradaNumPagantes').value
+            let gorjeta = conta * porcentoGorjeta/100
+            let total = conta + gorjeta
+            let gorjetaPorPagante = gorjeta / numPagantes
+            let contaPorPagante = conta / numPagantes
+            <!-- console.log({gorjeta, total, gorjetaPorPagante, contaPorPagante}) -->
+
+            document.getElementById('porcentoGorjeta').innerHTML = porcentoGorjeta + "%"
+            document.getElementById('valorGorjeta').innerHTML = 'R$ ' + gorjeta
+            document.getElementById('numPagantes').innerHTML = numPagantes + ' pessoa(s)'
+            document.getElementById('totalComGorjeta').innerHTML = 'R$ ' + total
+            document.getElementById('contaPorPagante').innerHTML = 'R$ ' + contaPorPagante
+            document.getElementById('gorjetaPorPagante').innerHTML = 'R$ ' + gorjetaPorPagante
+        }
+
+        let container = document.getElementById('container')
+        container.addEventListener('input', atualiza)
+    </script>
 </body>
 </html>
