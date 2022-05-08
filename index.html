@@ -51,6 +51,15 @@
         </section>
     </main>
     <script>
+        function formataDinheiro(value) {
+            value = value.toFixed(2)
+            return 'R$ ' + value
+        }
+
+        function formataPagantes(value) {
+            if (value == 1) return value + ' pessoa'
+            return value + ' pessoas'
+        }
         function atualiza() {
             let conta = Number(document.getElementById('suaConta').value)
             let porcentoGorjeta = document.getElementById('entradaGorjeta').value
@@ -62,11 +71,11 @@
             <!-- console.log({gorjeta, total, gorjetaPorPagante, contaPorPagante}) -->
 
             document.getElementById('porcentoGorjeta').innerHTML = porcentoGorjeta + "%"
-            document.getElementById('valorGorjeta').innerHTML = 'R$ ' + gorjeta
-            document.getElementById('numPagantes').innerHTML = numPagantes + ' pessoa(s)'
-            document.getElementById('totalComGorjeta').innerHTML = 'R$ ' + total
-            document.getElementById('contaPorPagante').innerHTML = 'R$ ' + contaPorPagante
-            document.getElementById('gorjetaPorPagante').innerHTML = 'R$ ' + gorjetaPorPagante
+            document.getElementById('valorGorjeta').innerHTML = formataDinheiro(gorjeta)
+            document.getElementById('numPagantes').innerHTML = formataPagantes(numPagantes)
+            document.getElementById('totalComGorjeta').innerHTML = formataDinheiro(total)
+            document.getElementById('contaPorPagante').innerHTML = formataDinheiro(contaPorPagante)
+            document.getElementById('gorjetaPorPagante').innerHTML = formataDinheiro(gorjetaPorPagante)
         }
 
         let container = document.getElementById('container')
