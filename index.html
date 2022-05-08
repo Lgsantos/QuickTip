@@ -41,7 +41,7 @@
             </div>
             <input type="range" min="1" max="10" value="1" id="entradaNumPagantes" class="range">
             <div class="ladosOpostos">
-                <span>Conta por pagante</span>
+                <span>Total por pagante</span>
                 <span id="contaPorPagante"></span>
             </div>
             <div class="ladosOpostos">
@@ -58,7 +58,7 @@
             let gorjeta = conta * porcentoGorjeta/100
             let total = conta + gorjeta
             let gorjetaPorPagante = gorjeta / numPagantes
-            let contaPorPagante = conta / numPagantes
+            let contaPorPagante = total / numPagantes
             <!-- console.log({gorjeta, total, gorjetaPorPagante, contaPorPagante}) -->
 
             document.getElementById('porcentoGorjeta').innerHTML = porcentoGorjeta + "%"
